@@ -1,0 +1,57 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category   design_default
+ * @package    Mage
+ * @copyright  Copyright (c) 2008 Irubin Consulting Inc. DBA Varien (http://www.varien.com)
+ * @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<div class="page-head">
+    <h3><?php echo $this->__('Edit Account Information') ?></h3>
+</div>
+<?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+<form action="<?php echo $this->getUrl('customer/account/editPost') ?>" method="post" id="form-validate">
+<fieldset class="group-select">
+    <?php echo $this->getBlockHtml('formkey')?>
+    <h4 class="legend"><?php echo $this->__('Account Information') ?></h4>
+    
+    <!-- start new fields -->
+         <div class="fieldset">
+            <ul class="form-list">
+                <li class="fields">
+                    <div class="input-box">
+                        <label for="registration_comment"><?php echo $this->__('Comments') ?></label>
+                        <div class="input-box">
+                            <textarea name="registration_comment" class="input-text" id="registration_comment" title="<?php echo $this->__('Comments') ?>"><?php echo $this->htmlEscape($this->getCustomer()->getRegistrationComment()) ?></textarea> 
+                        </div>
+                    </div>
+                    <div class="input-box">
+                        <label for="registration_number" class="required"><em>*</em><?php echo $this->__('Registration Number') ?></label>
+                        <div class="input-box">
+                            <input type="text" name="registration_number" id="registration_number" value="<?php echo $this->htmlEscape($this->getCustomer()->getRegistrationNumber()) ?>" title="<?php echo $this->__('Registration Number') ?>" class="input-text required-entry" />
+                        </div>
+                    </div>
+                </li>
+              </ul>
+          </div>  
+        <!-- end new fields -->
+        
+        <!-- add your old fields here -->
