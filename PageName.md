@@ -1,0 +1,10 @@
+The project contains several magento modules.
+
+## PWS\_ExtCustomerFields ##
+
+A Magento module for adding two custom fields (a text and a textarea field) to the customer entity. The fields are shown in the customer registration form, customer account edit form and in admin section - Customer Account Information. The fields are not displayed on order, invoice templates, etc.
+
+
+### Notes ###
+
+The module edit.phtml and register.phtml templates contains only a part of the original customer edit.phtml and register.phtml code - they are only used to show the newly added fields, you have to replace them with your own customer/form/edit.phtml and customer/form/register.phtml.
